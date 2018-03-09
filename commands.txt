@@ -1,0 +1,12 @@
+//print test results in xml file
+dotnet test -l trx
+dotnet test -l "trx;LogFileName=TestResults.xml"
+
+// execute specific class
+dotnet test --filter "FullyQualifiedName~GoogleNUnit"
+dotnet test --filter "FullyQualifiedName~GoogleNUnit" -l trx
+dotnet test --filter "FullyQualifiedName~GoogleNUnit" -l "trx;LogFileName=TestResults.xml"
+
+// list all discovered tests
+dotnet test -t
+dotnet test --list-tests
